@@ -9,8 +9,25 @@
     margin: 2rem 0;
     background: white;
     @include tablet {
-      width: 30%;
+      width: 33%;
       max-width: 30rem;
+    }
+
+    .recipe-content {
+      padding: 1rem;
+    }
+    .label-container {
+      display: flex;
+      flex-wrap: wrap;
+      .label {
+        font-size: 1.4rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        padding: 0.1rem 1.5rem;
+        margin-right: 0.5rem;
+        background: gold;
+        border-radius: 50px;
+      }
     }
   }
 }

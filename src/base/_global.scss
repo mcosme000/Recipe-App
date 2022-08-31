@@ -11,6 +11,7 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.5;
+  font-family: $primaryFont;
 }
 
 img {
@@ -22,6 +23,11 @@ img {
 a {
   text-decoration: none;
   color: black;
+}
+
+h3 {
+  font-family: $secondaryFont;
+  margin-bottom: 1rem;
 }
 
 .btn {

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Mulish:ital,wght@0,200;0,300;1,200&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -12,6 +14,7 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.5;
+  font-family: "Lato", sans-serif;
 }
 
 img {
@@ -24,6 +27,11 @@ img {
 a {
   text-decoration: none;
   color: black;
+}
+
+h3 {
+  font-family: "Mulish", sans-serif;
+  margin-bottom: 1rem;
 }
 
 .btn {
@@ -39,7 +47,7 @@ a {
 .container {
   margin: 2rem auto;
   padding: 3rem;
-  max-width: 80rem;
+  max-width: 100rem;
   width: 90%;
 }
 
@@ -81,8 +89,30 @@ form input[type="submit"] {
 
 @media (min-width: 768px) {
   .card-container .card {
-    width: 30%;
+    width: 33%;
     max-width: 30rem;
   }
+}
+
+.card-container .card .recipe-content {
+  padding: 1rem;
+}
+
+.card-container .card .label-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card-container .card .label-container .label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding: 0.1rem 1.5rem;
+  margin-right: 0.5rem;
+  background: gold;
+  border-radius: 50px;
 }
 /*# sourceMappingURL=app.css.map */
