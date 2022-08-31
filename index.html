@@ -9,11 +9,34 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
+    <div class="overlay">
+      <div class="overlay-content">
+        <div class="overlay-card">
+          <div class="overlay-img">
+            <img
+              src="https://i.pinimg.com/564x/dd/25/c5/dd25c56684e2cfa93fb880df60695f39.jpg"
+              alt=""
+            />
+          </div>
+          <div class="overlay-content">
+            <h3 class="title">Recipe title</h3>
+            <a href="#" class="button">Add to favorites</a>
+            <a href="#" class="button">See recipe</a>
+            <a href="#" class="button">See recipe</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <header>
       <form action="">
-        <input type="text" placeholder="Search for a recipe" id="input" />
+        <input
+          type="text"
+          placeholder="What are you cooking today?"
+          id="input"
+        />
         <input type="submit" value="Search" id="submit" />
       </form>
+      <a href="#" class="button">Favorites recipes</a>
     </header>
     <main>
       <div class="recipes">

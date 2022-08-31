@@ -29,6 +29,7 @@ const createRecipeCard = (data) => {
     let recipeTitle = data[i].recipe.label;
     let healthLabels = data[i].recipe.healthLabels;
     let mealType = data[i].recipe.mealType;
+    let cuisineType = data[i].recipe.cuisineType;
     imgAtt = data[i].recipe.image;
     //CREATE ELEMENTS//
     let cardElement = document.createElement("DIV");
@@ -52,6 +53,9 @@ const createRecipeCard = (data) => {
     titleElement.innerHTML = recipeTitle;
     imgElement.setAttribute("src", imgAtt);
 
+    // CHECK HEALTH LABELS //
+    // if (healthLabels.includes("vegan",))
+
     //APPEND ELEMENTS//
     imgContainer.appendChild(imgElement);
     recipeContentContainer.appendChild(titleElement);
@@ -64,21 +68,15 @@ const createRecipeCard = (data) => {
   }
 };
 
-const getRecipes = (data) => {
-  let recipeData = data.data.hits;
-  createRecipeCard(recipeData);
-};
-
-// const getRandomData = (data) => {
-//   console.log(data.data.recipes[0]);
-// };
-// let recipes = `https://api.spoonacular.com/recipes/random?q=&apiKey=${apiKey}`;
-// axios.get(recipes).then(getRandomData);
-
 // ** search recipes on ingredients!! ** //
 const startApi = (input) => {
   let searchRecipes = `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=${appId}&app_key=${apiKey}`;
   axios.get(searchRecipes).then(getRecipes);
+};
+
+const getRecipes = (data) => {
+  let recipeData = data.data.hits;
+  createRecipeCard(recipeData);
 };
 
 const cleanContainer = () => {

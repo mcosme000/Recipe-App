@@ -15,6 +15,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   font-family: "Lato", sans-serif;
+  position: relative;
 }
 
 img {
@@ -45,7 +46,7 @@ h3 {
 }
 
 .container {
-  margin: 2rem auto;
+  margin: 0rem auto;
   padding: 3rem;
   max-width: 100rem;
   width: 90%;
@@ -58,15 +59,32 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 10px 30px;
-  background: #518657;
+  padding: 2rem 5rem;
+  background: #4ac061;
+}
+
+form {
+  width: 100%;
 }
 
 form input[type="text"],
 form input[type="submit"] {
-  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  padding: 0.5rem 2rem;
+}
+
+form input[type="text"] {
+  width: 70%;
+  max-width: 40rem;
+  background: white;
+  color: grey;
+  font-weight: lighter;
+  border: none;
+}
+
+form input[type="submit"] {
+  border: none;
+  background: white;
 }
 
 @media (min-width: 768px) {
@@ -114,5 +132,51 @@ form input[type="submit"] {
   margin-right: 0.5rem;
   background: gold;
   border-radius: 50px;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  background: rgba(16, 13, 13, 0.6);
+  width: 100%;
+  height: 100vh;
+}
+
+.overlay .overlay-content {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.overlay .overlay-card {
+  width: 80%;
+  height: 60%;
+  max-width: 90rem;
+  background: white;
+}
+
+@media (min-width: 768px) {
+  .overlay .overlay-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.overlay .overlay-card .overlay-img {
+  width: 40%;
+  background: blue;
+}
+
+.overlay .overlay-card .overlay-content {
+  padding: 2rem;
 }
 /*# sourceMappingURL=app.css.map */
