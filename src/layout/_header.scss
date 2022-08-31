@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 30px;
+  background: $primaryColor;
+}
+
+form {
+  input[type="text"],
+  input[type="submit"] {
+    padding: 0.5rem 1rem;
+  }
+}

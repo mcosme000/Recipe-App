@@ -1,0 +1,16 @@
+.card-container {
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card {
+    margin: 2rem 0;
+    background: white;
+    @include tablet {
+      width: 30%;
+      max-width: 30rem;
+    }
+  }
+}

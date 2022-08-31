@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe app</title>
+    <link rel="stylesheet" href="src/app.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <form action="">
+        <input type="text" placeholder="Search for a recipe" id="input" />
+        <input type="submit" value="Search" id="submit" />
+      </form>
+    </header>
+    <main>
+      <div class="recipes">
+        <div class="container" id="container">
+          <div class="card-container" id="card-container">
+            <div class="card">
+              <div class="img-container">
+                <img
+                  src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                  alt=""
+                  id="recipe-img"
+                />
+              </div>
+              <div class="recipe-content">
+                <h3 class="title" id="title">Title of the recipe</h3>
+                <p id="description">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Ullam voluptatibus.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="img-container">
+                <img
+                  src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                  alt=""
+                />
+              </div>
+              <div class="recipe-content">
+                <h3 class="title">Title of the recipe</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Ullam voluptatibus.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="img-container">
+                <img
+                  src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                  alt=""
+                />
+              </div>
+              <div class="recipe-content">
+                <h3 class="title">Title of the recipe</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Ullam voluptatibus.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="img-container">
+                <img
+                  src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
+                  alt=""
+                />
+              </div>
+              <div class="recipe-content">
+                <h3 class="title">Title of the recipe</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Ullam voluptatibus.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
