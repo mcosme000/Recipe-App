@@ -31,11 +31,15 @@ const createRecipeCard = (data) => {
     let mealType = data[i].recipe.mealType;
     let cuisineType = data[i].recipe.cuisineType;
     imgAtt = data[i].recipe.image;
+
     //CREATE ELEMENTS//
     let cardElement = document.createElement("DIV");
     let imgContainer = document.createElement("DIV");
     let labelContainer = document.createElement("DIV");
+    let logoContainer = document.createElement("DIV");
     labelContainer.classList.add("label-container");
+
+    //create labels for meal type
     for (let j = 0; j < mealType.length; j++) {
       let label = document.createElement("P");
       label.classList.add("label");
@@ -50,11 +54,21 @@ const createRecipeCard = (data) => {
     //CHANGE VALUES OF ELEMENTS//
     cardElement.classList.add("card");
     recipeContentContainer.classList.add("recipe-content");
+    logoContainer.classList.add("logo-container");
     titleElement.innerHTML = recipeTitle;
     imgElement.setAttribute("src", imgAtt);
 
     // CHECK HEALTH LABELS //
-    // if (healthLabels.includes("vegan",))
+    const checking = healthLabels.filter((element) => {
+      return element === "Vegan";
+    });
+    console.log(checking);
+
+    if (healthLabels.includes("Vegan", "Gluten-Free")) {
+      let logo = document.createElement("img");
+      logo.setAttribute("src", `media/vegan.svg`);
+      logoContainer.appendChild(logo);
+    }
 
     //APPEND ELEMENTS//
     imgContainer.appendChild(imgElement);
@@ -62,6 +76,7 @@ const createRecipeCard = (data) => {
     recipeContentContainer.appendChild(labelContainer);
     cardElement.appendChild(imgContainer);
     cardElement.appendChild(recipeContentContainer);
+    cardElement.appendChild(logoContainer);
     cardContainer.appendChild(cardElement);
     container.appendChild(cardContainer);
     // console.log(data[i].recipe.label);
@@ -85,3 +100,5 @@ const cleanContainer = () => {
     cardContainer.removeChild(cardContainer.firstChild);
   }
 };
+
+// GET OVERLAY //
