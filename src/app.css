@@ -116,7 +116,8 @@ form input[type="submit"] {
 
 .card-container .card .logo-container {
   position: absolute;
-  top: -10px;
+  top: 1rem;
+  left: 1rem;
   width: 3rem;
 }
 
