@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Mulish:ital,wght@0,200;0,300;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Mulish:ital,wght@0,200;0,300;1,200&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -14,8 +15,36 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.5;
-  font-family: "Lato", sans-serif;
+  font-family: "Mulish", sans-serif;
   position: relative;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h1,
+h3 {
+  font-family: "Noto Serif JP", serif;
+  line-height: 1.3;
+}
+
+p,
+ul,
+li {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 img {
@@ -25,15 +54,8 @@ img {
      object-fit: cover;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-h3 {
-  font-size: 1.8rem;
-  font-family: "Mulish", sans-serif;
-  margin-bottom: 1rem;
+ul {
+  list-style: none;
 }
 
 .btn {
@@ -42,8 +64,25 @@ h3 {
   border-radius: 0.2rem;
 }
 
+.padding {
+  padding: 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border: 0.1rem solid #c24a23;
+  color: black;
+  margin-right: 1rem;
+}
+
+.button:hover {
+  background: #c24a23;
+  color: white;
+}
+
 .recipes {
-  background: #f4f4f4;
+  background: #e8e8de;
 }
 
 .container {
@@ -61,7 +100,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding: 2rem 5rem;
-  background: #4ac061;
+  background: #3f7a6d;
 }
 
 form {
@@ -105,6 +144,8 @@ form input[type="submit"] {
   position: relative;
   margin: 2rem 0;
   background: white;
+  -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+          box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 @media (min-width: 768px) {
@@ -121,10 +162,6 @@ form input[type="submit"] {
   width: 3rem;
 }
 
-.card-container .card .recipe-content {
-  padding: 1rem;
-}
-
 .card-container .card .label-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,21 +176,36 @@ form input[type="submit"] {
   letter-spacing: 0.1rem;
   padding: 0.1rem 1.5rem;
   margin-right: 0.5rem;
-  background: gold;
+  background: #e8e8de;
   border-radius: 50px;
 }
 
+.title {
+  color: #3f7a6d;
+  font-weight: bold;
+}
+
 .overlay {
-  display: none;
-  position: absolute;
-  background: rgba(16, 13, 13, 0.6);
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  z-index: 3;
 }
 
 .overlay .overlay-content {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,27 +217,73 @@ form input[type="submit"] {
           justify-content: center;
 }
 
-.overlay .overlay-card {
-  width: 80%;
-  height: 60%;
-  max-width: 90rem;
-  background: white;
+.overlay-card {
+  width: 90%;
+  background: #e8e8de;
 }
 
 @media (min-width: 768px) {
-  .overlay .overlay-card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .overlay-card {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    max-width: 90rem;
   }
 }
 
-.overlay .overlay-card .overlay-img {
-  width: 40%;
-  background: blue;
+.overlay-card .overlay-img {
+  height: 30rem;
+  width: 100%;
 }
 
-.overlay .overlay-card .overlay-content {
-  padding: 2rem;
+.overlay-card .overlay-img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .overlay-card .overlay-img {
+    width: 40rem;
+    height: 100%;
+  }
+}
+
+.overlay-text {
+  max-height: 40rem;
+  overflow: scroll;
+}
+
+.overlay-text .overlay-title {
+  font-size: 4rem;
+  font-weight: lighter;
+  font-style: italic;
+  border-bottom: 0.1rem solid black;
+}
+
+.overlay-text .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.overlay-text .details p {
+  font-size: 1.6rem;
+  color: #3f7a6d;
+}
+
+.overlay-text .details p span {
+  display: block;
+  color: black;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=app.css.map */

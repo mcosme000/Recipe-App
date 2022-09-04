@@ -1,9 +1,18 @@
 // COLOR VARIABLES //
-$primaryColor: rgb(74, 192, 97);
+$primaryColor: #3f7a6d;
+$secondaryColor: #e8e8de;
+$accentColor: #c24a23;
 
 // FONT VARIABLES //
 $primaryFont: "Lato", sans-serif;
 $secondaryFont: "Mulish", sans-serif;
+$serifFont: "Noto Serif JP", serif;
+$light: 300;
+$bold: 700;
+
+// SPACE //
+$space: 4rem;
+
 // MEDIA QUERIES:
 $phone: 480px;
 $tablet: 768px;

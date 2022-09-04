@@ -9,20 +9,31 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="overlay">
+    <div class="overlay hidden" id="overlay">
       <div class="overlay-content">
+        <!-- CARD STARTS HERE -->
         <div class="overlay-card">
           <div class="overlay-img">
             <img
-              src="https://i.pinimg.com/564x/dd/25/c5/dd25c56684e2cfa93fb880df60695f39.jpg"
+              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
               alt=""
+              id="overlay-img"
             />
           </div>
-          <div class="overlay-content">
-            <h3 class="title">Recipe title</h3>
+          <div class="overlay-text padding">
+            <h3 class="overlay-title" id="overlay-title">Recipe title</h3>
+            <ul id="ingredients-list">
+              <p>Ingredients list:</p>
+            </ul>
+            <div class="details">
+              <p>PREP TIME <span id="prepTime">20 mins</span></p>
+              <p>COOK TIME <span class="cookTime">40mins</span></p>
+              <p>SERVES <span class="serves">4</span></p>
+            </div>
             <a href="#" class="button">Add to favorites</a>
-            <a href="#" class="button">See recipe</a>
-            <a href="#" class="button">See recipe</a>
+            <a href="#" target="_blank" class="button" id="recipe-link"
+              >Go to recipe</a
+            >
           </div>
         </div>
       </div>
@@ -41,7 +52,7 @@
     <main>
       <div class="recipes">
         <div class="container" id="container">
-          <h1>Showing recipes for <span id="show-title">sushi</span></h1>
+          <h1>Showing recipes for <span id="show-title"></span></h1>
           <div class="card-container" id="card-container">
             <div class="card">
               <div class="logo-container">
@@ -54,7 +65,7 @@
                   alt=""
                 />
               </div>
-              <div class="recipe-content">
+              <div class="recipe-content padding">
                 <h3 class="title">Title of the recipe</h3>
                 <div class="label-container">
                   <p class="label">Asian</p>
