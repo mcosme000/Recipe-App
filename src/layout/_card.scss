@@ -2,6 +2,7 @@
   @include tablet {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     justify-content: space-between;
   }
 
@@ -21,7 +22,6 @@
       left: 1rem;
       width: 3rem;
     }
-
     .label-container {
       display: flex;
       flex-wrap: wrap;
@@ -40,6 +40,5 @@
 }
 
 .title {
-  color: $primaryColor;
-  font-weight: bold;
+  font-weight: $light;
 }

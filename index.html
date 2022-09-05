@@ -6,9 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe app</title>
     <link rel="stylesheet" href="src/app.css" />
+
+    <!-- AXIOS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/8013b0f68f.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
+    <div class="landing" id="landing">
+      <div class="overlay-content">
+        <div class="landing-content">
+          <img src="media/Vector.svg" alt="" class="landing-icon" />
+          <h1>Welcome to foods</h1>
+          <p>
+            Start looking into more than 2 million recipes from all over the
+            world
+          </p>
+          <form action="">
+            <input type="text" id="landing-input" />
+            <input type="submit" id="landing-submit" />
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="overlay hidden" id="overlay">
       <div class="overlay-content">
         <!-- CARD STARTS HERE -->
@@ -38,6 +63,8 @@
         </div>
       </div>
     </div>
+
+    <!-- HEADER  -->
     <header>
       <form action="">
         <input
@@ -47,14 +74,16 @@
         />
         <input type="submit" value="Search" id="submit" />
       </form>
-      <a href="#" class="button">Favorite recipes</a>
+      <a href="#" class="button">My recipes</a>
     </header>
+
+    <!-- MAIN -->
     <main>
       <div class="recipes">
         <div class="container" id="container">
-          <h1>Showing recipes for <span id="show-title"></span></h1>
+          <h1>Showing recipes for the search <span id="show-title"></span></h1>
           <div class="card-container" id="card-container">
-            <div class="card">
+            <!-- <div class="card">
               <div class="logo-container">
                 <img src="media/vegan.svg" alt="" class="logo" />
                 <img src="media/gluten-free.svg" alt="" class="logo" />
@@ -72,12 +101,29 @@
                   <p class="label">Meat</p>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </main>
-    <footer></footer>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Page designed and coded by María Cosmen</p>
+      <ul class="social">
+        <a href="https://github.com/mcosme000" target="_blank"
+          ><li><i class="fa fa-brands fa fa-github"></i></li
+        ></a>
+        <a href="https://www.behance.net/maracosmen" target="_blank"
+          ><li><i class="fa fa-brands fa fa-behance"></i></li
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/maria-cosmen-7293771a7/"
+          target="_blank"
+          ><li><i class="fa fa-brands fa fa-linkedin"></i></li
+        ></a>
+      </ul>
+    </footer>
 
     <script src="app.js"></script>
   </body>

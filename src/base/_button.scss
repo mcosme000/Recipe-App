@@ -1,0 +1,9 @@
+.button {
+  @include button($accentColor, inline-block);
+  padding: 0.8rem;
+
+  &:hover {
+    @include button($accentColor, inline-block);
+    color: white;
+  }
+}

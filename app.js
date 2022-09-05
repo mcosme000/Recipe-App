@@ -16,6 +16,8 @@ const startApi = (input) => {
 let input = document.getElementById("input");
 let showTitle = document.getElementById("show-title");
 const submit = document.getElementById("submit");
+const landingInput = document.getElementById("landing-input");
+const landingSubmit = document.getElementById("landing-submit");
 const container = document.getElementById("container");
 const cardContainer = document.getElementById("card-container");
 let card = document.getElementsByClassName("card");
@@ -24,6 +26,8 @@ let card = document.getElementsByClassName("card");
 let overlay = document.getElementById("overlay");
 let overlayImg = document.getElementById("overlay-img");
 let overlayTitle = document.getElementById("overlay-title");
+const landing = document.getElementById("landing");
+
 //
 
 // --- GETTING INFORMATION FROM INPUT --- //
@@ -34,6 +38,15 @@ submit.addEventListener("click", (e) => {
   input.value = "";
   startApi(inputValue);
   cleanContainer();
+});
+
+// --- GETTING INFORMATION FROM LANDING INPUT --- //
+landingSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
+  let inputValue = landingInput.value;
+  showTitle.innerHTML = inputValue;
+  startApi(inputValue);
+  hideLanding();
 });
 
 //
@@ -98,7 +111,7 @@ const createRecipeCard = (data) => {
 
     //Create a recipe container and append elements
     let recipeContentContainer = document.createElement("DIV");
-    recipeContentContainer.classList.add("padding");
+    recipeContentContainer.classList.add("padding", "recipe-content");
     recipeContentContainer.appendChild(titleElement);
     recipeContentContainer.appendChild(labelContainer);
 
@@ -181,4 +194,9 @@ const openOverlay = (data) => {
       ingredientsList.removeChild(ingredientsList.firstChild);
     }
   });
+};
+
+// HIDDE THE LANDING OVERLAY
+const hideLanding = () => {
+  landing.classList.add("hidden");
 };
