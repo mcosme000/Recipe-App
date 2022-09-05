@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <div class="landing" id="landing">
+    <div class="landing hidden" id="landing">
       <div class="overlay-content">
         <div class="landing-content">
           <img src="media/Vector.svg" alt="" class="landing-icon" />
@@ -66,15 +66,18 @@
 
     <!-- HEADER  -->
     <header>
+      <a href="#"><h1 class="logo">FOODS</h1></a>
       <form action="">
-        <input
-          type="text"
-          placeholder="What are you cooking today?"
-          id="input"
-        />
-        <input type="submit" value="Search" id="submit" />
+        <input type="text" id="input" placeholder="Search recipes" />
+        <button type="submit" id="submit">
+          <img src="media/search_white.svg" alt="" />
+        </button>
+        <!-- <input type="submit" value="Search" id="submit" /> -->
       </form>
-      <a href="#" class="button">My recipes</a>
+      <ul>
+        <a href="myrecipes.html"><li>My recipes</li></a>
+        <a href="about.html"><li>About</li></a>
+      </ul>
     </header>
 
     <!-- MAIN -->

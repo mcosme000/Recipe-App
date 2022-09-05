@@ -1,31 +1,55 @@
 header {
   padding: 2rem 5rem;
   background: $primaryColor;
+  display: flex;
+  flex-direction: column;
   @include tablet {
-    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
+
+  .logo {
+    font-family: $logo;
+    font-weight: $bold;
+    font-style: italic;
+    padding: $space / 2;
+  }
+}
+
+header ul li {
+  margin: 0 2rem;
 }
 
 header form {
   width: 100%;
-  input[type="text"],
-  input[type="submit"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.1rem solid white;
+  border-radius: 3rem;
+  padding: 0.8rem 2rem;
+  @include tablet {
+    width: 50%;
+  }
+  input[type="text"] {
+    width: 90%;
+    background: $primaryColor;
+    border: none;
     font-size: 1.6rem;
     padding: 0.5rem 2rem;
+    color: white;
+    &::placeholder {
+      color: white;
+    }
   }
 
-  input[type="text"] {
-    width: 70%;
-    max-width: 40rem;
-    background: white;
-    color: grey;
-    font-weight: lighter;
+  button[type="submit"] {
+    background: none;
     border: none;
-  }
-
-  input[type="submit"] {
-    border: none;
-    background: white;
+    padding: 0 1rem;
+    img {
+      width: 2rem;
+    }
   }
 }
