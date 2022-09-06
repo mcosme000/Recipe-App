@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Mulish:ital,wght@0,200;0,300;1,200&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Mulish:ital,wght@0,200;0,300;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,900;1,900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -37,15 +37,14 @@ h3 {
 
 h1,
 h3 {
-  font-family: "Noto Serif JP", serif;
+  font-family: "Source Serif Pro", serif;
   line-height: 1.3;
 }
 
 p,
-ul,
 li {
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 a {
@@ -64,10 +63,8 @@ ul {
   list-style: none;
 }
 
-.btn {
-  padding: 0.5rem 1rem;
-  background: white;
-  border-radius: 0.2rem;
+li {
+  display: inline-block;
 }
 
 .padding {
@@ -78,15 +75,33 @@ ul {
   display: none;
 }
 
-.recipes {
-  background: #e8e8de;
+.active {
+  color: #e17e4a;
+  font-weight: 700;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .container {
   margin: 0rem auto;
   padding: 4rem;
   max-width: 100rem;
-  width: 90%;
+  width: 100%;
+}
+
+.small-container {
+  margin: 0rem auto;
+  padding: 4rem;
+  max-width: 80rem;
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+  margin: 2rem 0;
+  background: #e8e8de;
 }
 
 .button {
@@ -118,41 +133,96 @@ ul {
 header {
   padding: 2rem 5rem;
   background: #3f7a6d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media (min-width: 768px) {
   header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
+}
+
+header .logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding: 2rem;
+}
+
+header ul li {
+  margin: 0 2rem;
 }
 
 header form {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 0.1rem solid white;
+  border-radius: 3rem;
+  padding: 0.8rem 2rem;
 }
 
-header form input[type="text"],
-header form input[type="submit"] {
-  font-size: 1.6rem;
-  padding: 0.5rem 2rem;
+@media (min-width: 768px) {
+  header form {
+    width: 50%;
+  }
 }
 
 header form input[type="text"] {
-  width: 70%;
-  max-width: 40rem;
-  background: white;
-  color: grey;
-  font-weight: lighter;
+  width: 90%;
+  background: #3f7a6d;
   border: none;
+  font-size: 1.6rem;
+  padding: 0.5rem 2rem;
+  color: white;
 }
 
-header form input[type="submit"] {
+header form input[type="text"]::-webkit-input-placeholder {
+  color: white;
+}
+
+header form input[type="text"]:-ms-input-placeholder {
+  color: white;
+}
+
+header form input[type="text"]::-ms-input-placeholder {
+  color: white;
+}
+
+header form input[type="text"]::placeholder {
+  color: white;
+}
+
+header form button[type="submit"] {
+  background: none;
   border: none;
-  background: white;
+  padding: 0 1rem;
+}
+
+header form button[type="submit"] img {
+  width: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -171,7 +241,7 @@ header form input[type="submit"] {
   }
 }
 
-.card-container .card {
+.card {
   position: relative;
   margin: 2rem 0;
   background: white;
@@ -180,20 +250,20 @@ header form input[type="submit"] {
 }
 
 @media (min-width: 768px) {
-  .card-container .card {
+  .card {
     width: 33%;
     max-width: 30rem;
   }
 }
 
-.card-container .card .logo-container {
+.card .logo-container {
   position: absolute;
   top: 1rem;
   left: 1rem;
   width: 3rem;
 }
 
-.card-container .card .label-container {
+.card .label-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,7 +271,7 @@ header form input[type="submit"] {
       flex-wrap: wrap;
 }
 
-.card-container .card .label-container .label {
+.card .label-container .label {
   font-size: 1.4rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
@@ -336,7 +406,6 @@ footer p {
 }
 
 footer ul li {
-  display: inline-block;
   font-size: 2rem;
   margin: 0 2rem;
 }
@@ -384,7 +453,7 @@ footer ul li:hover {
 }
 
 .landing .landing-content h1 {
-  font-family: "Lato", sans-serif;
+  font-family: "Source Serif Pro", serif;
   font-style: italic;
   font-size: 5rem;
 }
@@ -421,5 +490,85 @@ footer ul li:hover {
 
 .hidden {
   display: none;
+}
+
+.green {
+  width: 100%;
+  background: #3f7a6d;
+  height: 84vh;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.green .green-content {
+  margin: 0 auto;
+  width: 80%;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.green .green-content p {
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.ideas li {
+  background: #e8e8de;
+  padding: 0.6rem 2rem;
+  margin: 0.5rem;
+  border-radius: 3rem;
+  font-size: 1.4rem;
+}
+
+@media (min-width: 768px) {
+  .ideas li {
+    font-size: 1.8rem;
+  }
+}
+
+.ideas li:hover {
+  cursor: pointer;
+  color: #3f7a6d;
+}
+
+.iconography {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .iconography {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.iconography div {
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .iconography div {
+    margin: 0;
+  }
+}
+
+.iconography img {
+  width: 70%;
+  max-width: 30rem;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .iconography img {
+    width: 12rem;
+  }
 }
 /*# sourceMappingURL=app.css.map */

@@ -5,36 +5,36 @@
     justify-content: flex-end;
     justify-content: space-between;
   }
+}
 
-  .card {
-    position: relative;
-    margin: 2rem 0;
-    background: white;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    @include tablet {
-      width: 33%;
-      max-width: 30rem;
-    }
+.card {
+  position: relative;
+  margin: 2rem 0;
+  background: white;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  @include tablet {
+    width: 33%;
+    max-width: 30rem;
+  }
 
-    .logo-container {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      width: 3rem;
-    }
-    .label-container {
-      display: flex;
-      flex-wrap: wrap;
+  .logo-container {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 3rem;
+  }
+  .label-container {
+    display: flex;
+    flex-wrap: wrap;
 
-      .label {
-        font-size: 1.4rem;
-        font-weight: bold;
-        letter-spacing: 0.1rem;
-        padding: 0.1rem 1.5rem;
-        margin-right: 0.5rem;
-        background: $secondaryColor;
-        border-radius: 50px;
-      }
+    .label {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      padding: 0.1rem 1.5rem;
+      margin-right: 0.5rem;
+      background: $secondaryColor;
+      border-radius: 50px;
     }
   }
 }

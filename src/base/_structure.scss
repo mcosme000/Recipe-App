@@ -1,10 +1,19 @@
-.recipes {
-  background: $secondaryColor;
-}
-
 .container {
   margin: 0rem auto;
   padding: $space;
   max-width: 100rem;
-  width: 90%;
+  width: 100%;
+}
+
+.small-container {
+  margin: 0rem auto;
+  padding: $space;
+  max-width: 80rem;
+  width: 100%;
+}
+
+.section {
+  width: 100%;
+  margin: 2rem 0;
+  background: $secondaryColor;
 }
