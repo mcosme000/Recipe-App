@@ -18,11 +18,12 @@
   </head>
 
   <body>
+    <!-- OVERLAY FOR OPENING SCREEN -->
     <div class="landing hidden" id="landing">
       <div class="overlay-content">
         <div class="landing-content">
           <img src="media/Vector.svg" alt="" class="landing-icon" />
-          <h1>Welcome to foods</h1>
+          <h1>Welcome to <span class="logo">FOODS</span></h1>
           <p>
             Start looking into more than 2 million recipes from all over the
             world
@@ -34,6 +35,8 @@
         </div>
       </div>
     </div>
+
+    <!-- OVERLAY FOR RECIPES -->
     <div class="overlay hidden" id="overlay">
       <div class="overlay-content">
         <!-- CARD STARTS HERE -->
@@ -72,7 +75,6 @@
         <button type="submit" id="submit">
           <img src="media/search_white.svg" alt="" />
         </button>
-        <!-- <input type="submit" value="Search" id="submit" /> -->
       </form>
       <ul>
         <a href="myrecipes.html"><li>My recipes</li></a>
@@ -82,11 +84,25 @@
 
     <!-- MAIN -->
     <main>
-      <div class="recipes">
-        <div class="container" id="container">
-          <h1>Showing recipes for the search <span id="show-title"></span></h1>
-          <div class="card-container" id="card-container">
-            <!-- <div class="card">
+      <!-- The container "green" only shows when the user 
+        is on the main page but still haven't search for any recipe -->
+      <div class="green" id="green">
+        <div class="green-content">
+          <p>Don't know where to start? Here you have some ideas!</p>
+          <ul class="ideas" id="ideas">
+            <li>Chocolate Cake</li>
+            <li>Low-carb Dinner</li>
+            <li>Chili con Carne</li>
+            <li>Spanish Omelete</li>
+            <li>Rare Beef</li>
+            <li>One-pot</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container hidden" id="container">
+        <h1 id="show-title"></h1>
+        <div class="card-container" id="card-container">
+          <!-- <div class="card">
               <div class="logo-container">
                 <img src="media/vegan.svg" alt="" class="logo" />
                 <img src="media/gluten-free.svg" alt="" class="logo" />
@@ -105,28 +121,9 @@
                 </div>
               </div>
             </div> -->
-          </div>
         </div>
       </div>
     </main>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>Page designed and coded by María Cosmen</p>
-      <ul class="social">
-        <a href="https://github.com/mcosme000" target="_blank"
-          ><li><i class="fa fa-brands fa fa-github"></i></li
-        ></a>
-        <a href="https://www.behance.net/maracosmen" target="_blank"
-          ><li><i class="fa fa-brands fa fa-behance"></i></li
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/maria-cosmen-7293771a7/"
-          target="_blank"
-          ><li><i class="fa fa-brands fa fa-linkedin"></i></li
-        ></a>
-      </ul>
-    </footer>
 
     <script src="app.js"></script>
   </body>

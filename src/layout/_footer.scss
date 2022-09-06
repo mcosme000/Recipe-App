@@ -4,11 +4,12 @@ footer {
   background: rgb(59, 59, 59);
   color: white;
   text-align: center;
+
   p {
     font-size: 1.2rem;
   }
+
   ul li {
-    display: inline-block;
     font-size: 2rem;
     margin: 0 2rem;
     &:hover {

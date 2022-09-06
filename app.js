@@ -12,6 +12,7 @@ const startApi = (input) => {
   axios.get(searchRecipes).then(getRecipes);
 };
 
+console.log("working?");
 // --- GETTING ELEMENTS FROM HTML --- //
 let input = document.getElementById("input");
 let showTitle = document.getElementById("show-title");
@@ -21,6 +22,7 @@ const landingSubmit = document.getElementById("landing-submit");
 const container = document.getElementById("container");
 const cardContainer = document.getElementById("card-container");
 let card = document.getElementsByClassName("card");
+const greenContainer = document.getElementById("green");
 
 // overlay elements:
 let overlay = document.getElementById("overlay");
@@ -34,7 +36,8 @@ const landing = document.getElementById("landing");
 submit.addEventListener("click", (e) => {
   e.preventDefault();
   let inputValue = input.value;
-  showTitle.innerHTML = inputValue;
+  console.log(input);
+  showTitle.innerHTML = `Showing recipes for the search ${inputValue}`;
   input.value = "";
   startApi(inputValue);
   cleanContainer();
@@ -44,12 +47,21 @@ submit.addEventListener("click", (e) => {
 landingSubmit.addEventListener("click", (e) => {
   e.preventDefault();
   let inputValue = landingInput.value;
-  showTitle.innerHTML = inputValue;
+  showTitle.innerHTML = `Showing recipes for the search ${inputValue}`;
   startApi(inputValue);
   hideLanding();
 });
 
 //
+
+// --- GETTING INFORMATION FROM INDEX LI RECOMMENDATIONS --- //
+const ideas = document.getElementById("ideas").children;
+for (let i = 0; i < ideas.length; i++) {
+  ideas[i].addEventListener("click", () => {
+    startApi(ideas[i].innerHTML);
+    showTitle.innerHTML = `Showing recipes for the search ${ideas[i].innerHTML}`;
+  });
+}
 
 // - - - THE MAIN FUNCTION - - - //
 const createRecipeCard = (data) => {
@@ -62,17 +74,22 @@ const createRecipeCard = (data) => {
     let cuisineType = data[i].recipe.cuisineType;
     let imgAtt = data[i].recipe.image;
 
+    // hide the green container
+    greenContainer.style.display = "none";
+
+    // By default, the main container where the cards are is hidden
+    // I need to change it to visible:
+    container.style.display = "block";
+
     //Create a logo container
     let logoContainer = document.createElement("DIV");
     logoContainer.classList.add("logo-container");
 
     //Create icons for health labels:
-    /* 
-       I declared an array that contains the three names of the labels I will use in this project.
+    /* I declared an array that contains the three names of the labels I will use in this project.
        I loop through the data array and then loop agan through the iconHealth one.
        If the elements are the same, I change the att for the icon
-       (the icon names must be the exact in order to work).
-    */
+       (the icon names must be the exact in order to work). */
     const iconHealth = ["Vegan", "Gluten-Free", "Dairy-Free"];
     for (let i = 0; i < healthLabels.length; i++) {
       for (let j = 0; j < iconHealth.length; j++) {
@@ -144,7 +161,7 @@ const cleanContainer = () => {
   }
 };
 
-// GET CLICKED CARD
+// IDENTIFY THE CLICKED CARD
 // Since I'm not showing all the information in the small cards,
 // I still need the whole API data array to get extra information and show it on the overlay.
 // Since both arrays have the same lenght, when I click on X card, I can get the data[X]
