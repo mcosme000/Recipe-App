@@ -12,7 +12,8 @@ const startApi = (input) => {
   axios.get(searchRecipes).then(getRecipes);
 };
 
-console.log("working?");
+//
+
 // --- GETTING ELEMENTS FROM HTML --- //
 let input = document.getElementById("input");
 let showTitle = document.getElementById("show-title");
@@ -30,9 +31,14 @@ let overlayImg = document.getElementById("overlay-img");
 let overlayTitle = document.getElementById("overlay-title");
 const landing = document.getElementById("landing");
 
-//
+// - - - GETTING INFORMATION FROM INPUTS - - - //
+/* In the app there are 3 different ways to input information and call the API: 
+  1. Main form: located in the header
+  2. Form shown on the opening screen (where the user first opens the app)
+  3. Li labels with ideas of recipe searches
+*/
 
-// --- GETTING INFORMATION FROM INPUT --- //
+// --- MAIN FORM --- //
 submit.addEventListener("click", (e) => {
   e.preventDefault();
   let inputValue = input.value;
@@ -43,7 +49,7 @@ submit.addEventListener("click", (e) => {
   cleanContainer();
 });
 
-// --- GETTING INFORMATION FROM LANDING INPUT --- //
+// --- OPENING SCREEN FORM --- //
 landingSubmit.addEventListener("click", (e) => {
   e.preventDefault();
   let inputValue = landingInput.value;
@@ -52,9 +58,7 @@ landingSubmit.addEventListener("click", (e) => {
   hideLanding();
 });
 
-//
-
-// --- GETTING INFORMATION FROM INDEX LI RECOMMENDATIONS --- //
+// --- LI LABELS RECOMMENDATIONS --- //
 const ideas = document.getElementById("ideas").children;
 for (let i = 0; i < ideas.length; i++) {
   ideas[i].addEventListener("click", () => {
@@ -63,7 +67,11 @@ for (let i = 0; i < ideas.length; i++) {
   });
 }
 
-// - - - THE MAIN FUNCTION - - - //
+//
+
+// - - - CREATING CARDS FROM API DATA - - - //
+/* This function creates the cards
+that will be shown in the main container */
 const createRecipeCard = (data) => {
   // console.log(data);
   for (let i = 0; i < data.length; i++) {
@@ -150,21 +158,22 @@ const createRecipeCard = (data) => {
   getSelectedCard(cards, data);
 };
 
+// - - - AFTER CALLING THE API - - - //
+/* This function is called after running the API 
+It gets the necessary information stored in the API and then
+sends that information to the function above to create cards */
 const getRecipes = (data) => {
   let recipeData = data.data.hits;
   createRecipeCard(recipeData);
 };
 
-const cleanContainer = () => {
-  while (cardContainer.firstChild) {
-    cardContainer.removeChild(cardContainer.firstChild);
-  }
-};
+//
 
-// IDENTIFY THE CLICKED CARD
-// Since I'm not showing all the information in the small cards,
-// I still need the whole API data array to get extra information and show it on the overlay.
-// Since both arrays have the same lenght, when I click on X card, I can get the data[X]
+// - - - IDENTIFY THE CLICKED CARD TO CREATE AN OVERLAY - - - //
+/* This function is called when I click on any card */
+/* Since I'm not showing all the information in the small cards,
+I still need the whole API data array to get extra information 
+Since both arrays have the same lenght, when I click on X card, I can get the data[X] */
 const getSelectedCard = (arr, data) => {
   for (let i = 0; i < arr.length; i++) {
     arr[i].addEventListener("click", () => {
@@ -213,7 +222,20 @@ const openOverlay = (data) => {
   });
 };
 
-// HIDDE THE LANDING OVERLAY
+//
+
+// - - - CREATE ARRAY OF FAVORITES - - - //
+
+// - - - SHOW THAT ARRAY IN myrecipes.html - - - //
+
+// - - - HIDE THE LANDING OVERLAY - - - //
 const hideLanding = () => {
   landing.classList.add("hidden");
+};
+
+// - - - CLEAN THE CARDS FROM CONTAINER - - - //
+const cleanContainer = () => {
+  while (cardContainer.firstChild) {
+    cardContainer.removeChild(cardContainer.firstChild);
+  }
 };
