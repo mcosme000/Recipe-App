@@ -226,6 +226,7 @@ const openOverlay = (data) => {
 
 // - - - CREATE ARRAY OF FAVORITES - - - //
 
+
 // - - - SHOW THAT ARRAY IN myrecipes.html - - - //
 
 // - - - HIDE THE LANDING OVERLAY - - - //
