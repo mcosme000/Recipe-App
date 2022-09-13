@@ -192,6 +192,7 @@ const openOverlay = (data) => {
   let overlayTitle = document.getElementById("overlay-title");
   const recipeLink = document.getElementById("recipe-link");
   const ingredientsList = document.getElementById("ingredients-list");
+  const closeBtn = document.getElementById("close-btn");
 
   //Change content of elements
   overlayTitle.innerHTML = data.recipe.label;
@@ -213,7 +214,7 @@ const openOverlay = (data) => {
   overlay.classList.remove("hidden");
 
   //Hide overlay
-  overlay.addEventListener("click", () => {
+  closeBtn.addEventListener("click", () => {
     overlay.classList.add("hidden");
     // Format the ingredient list:
     while (ingredientsList.firstChild) {
@@ -225,7 +226,11 @@ const openOverlay = (data) => {
 //
 
 // - - - CREATE ARRAY OF FAVORITES - - - //
-
+const favBtn = document.getElementById("fav-btn");
+favBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("clickingggggg");
+});
 
 // - - - SHOW THAT ARRAY IN myrecipes.html - - - //
 

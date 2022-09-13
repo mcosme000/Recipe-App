@@ -18,7 +18,8 @@
   </head>
 
   <body>
-    <!-- OVERLAY FOR OPENING SCREEN -->
+    <!-- OVERLAY FOR ONBOARDING SCREEN -->
+    <!-- When users opens the website for the first time, they will see the onboarding screen.  -->
     <div class="landing hidden" id="landing">
       <div class="overlay-content">
         <div class="landing-content">
@@ -41,6 +42,9 @@
       <div class="overlay-content">
         <!-- CARD STARTS HERE -->
         <div class="overlay-card">
+          <div class="close-btn" id="close-btn">
+            <img src="media/close.svg" alt="" class="icon" />
+          </div>
           <div class="overlay-img">
             <img
               src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
@@ -50,15 +54,14 @@
           </div>
           <div class="overlay-text padding">
             <h3 class="overlay-title" id="overlay-title">Recipe title</h3>
-            <ul id="ingredients-list">
-              <p>Ingredients list:</p>
-            </ul>
+            <p>Ingredients list:</p>
+            <ul id="ingredients-list"></ul>
             <div class="details">
               <p>PREP TIME <span id="prepTime">20 mins</span></p>
               <p>COOK TIME <span class="cookTime">40mins</span></p>
               <p>SERVES <span class="serves">4</span></p>
             </div>
-            <a href="#" class="button">Add to favorites</a>
+            <a href="#" class="button" id="fav-btn">Add to favorites</a>
             <a href="#" target="_blank" class="button" id="recipe-link"
               >Go to recipe</a
             >
@@ -73,7 +76,7 @@
       <form action="">
         <input type="text" id="input" placeholder="Search recipes" />
         <button type="submit" id="submit">
-          <img src="media/search_white.svg" alt="" />
+          <img src="media/search_white.svg" alt="" class="icon" />
         </button>
       </form>
       <ul>
@@ -84,8 +87,12 @@
 
     <!-- MAIN -->
     <main>
-      <!-- The container "green" only shows when the user 
-        is on the main page but still haven't search for any recipe -->
+      <!-- 
+      This container "green" only appears when the user 
+      is on the main page but still haven't search for any recipe 
+      It is similar to the onboarding page but keeps the header and the searching form
+      on the top of the page. 
+      -->
       <div class="green" id="green">
         <div class="green-content">
           <p>Don't know where to start? Here you have some ideas!</p>
