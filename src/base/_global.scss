@@ -27,7 +27,7 @@ h1 {
 
 h3 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 h1,
@@ -38,8 +38,11 @@ h3 {
 
 p,
 li {
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
+  @include tablet {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
 }
 
 a {
@@ -76,4 +79,8 @@ li {
 
 .bold {
   font-weight: bold;
+}
+
+.icon {
+  max-width: 3rem;
 }

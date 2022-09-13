@@ -1,6 +1,6 @@
 .button {
   @include button($accentColor, inline-block);
-  padding: 0.8rem;
+  padding: 0.8rem 2rem;
 
   &:hover {
     @include button($accentColor, inline-block);
