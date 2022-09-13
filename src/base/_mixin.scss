@@ -18,14 +18,13 @@
 }
 
 // BUTTON MIXIN
-@mixin button($background, $display) {
+@mixin button($background, $display, $color) {
   text-align: center;
   margin: 1rem 1rem 1rem 0;
   text-align: center;
   border-radius: 2rem;
   background: $background;
-  color: black;
-  font-weight: $bold;
   display: $display;
+  color: $color;
   @content;
 }

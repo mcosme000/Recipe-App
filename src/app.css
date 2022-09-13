@@ -121,10 +121,10 @@ li {
   text-align: center;
   border-radius: 2rem;
   background: #e17e4a;
-  color: black;
-  font-weight: 700;
   display: inline-block;
+  color: #000;
   padding: 0.8rem 2rem;
+  font-weight: 700;
 }
 
 .button:hover {
@@ -133,10 +133,32 @@ li {
   text-align: center;
   border-radius: 2rem;
   background: #e17e4a;
-  color: black;
-  font-weight: 700;
   display: inline-block;
-  color: white;
+  color: #fff;
+}
+
+.small-button {
+  text-align: center;
+  margin: 1rem 1rem 1rem 0;
+  text-align: center;
+  border-radius: 2rem;
+  background: #e17e4a;
+  display: inline-block;
+  color: #000;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.4rem;
+}
+
+.remove-button {
+  text-align: center;
+  margin: 1rem 1rem 1rem 0;
+  text-align: center;
+  border-radius: 2rem;
+  background: none;
+  display: inline-block;
+  color: #ff4040;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.4rem;
 }
 
 header {
@@ -251,7 +273,6 @@ header form button[type="submit"] img {
 }
 
 .card {
-  position: relative;
   margin: 2rem 0;
   background: white;
   -webkit-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
@@ -265,29 +286,43 @@ header form button[type="submit"] img {
   }
 }
 
-.card .logo-container {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  width: 3rem;
+.card .img-container {
+  position: relative;
 }
 
-.card .label-container {
+.card .logo-container {
+  position: absolute;
+  bottom: -1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 40%;
 }
 
-.card .label-container .label {
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 0.1rem;
-  padding: 0.1rem 1.5rem;
-  margin-right: 0.5rem;
-  background: #e8e8de;
-  border-radius: 50px;
+.card .logo-container img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 1rem;
+}
+
+.card .like-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 2.5rem;
+}
+
+.card .like-container:hover {
+  cursor: pointer;
 }
 
 .title {

@@ -109,25 +109,37 @@ const createRecipeCard = (data) => {
       }
     }
 
+    //Create a like button container
+    let likeContainer = document.createElement("DIV");
+    likeContainer.classList.add("like-container");
+
+    //Create a like button
+    let likeBtn = document.createElement("IMG");
+    likeBtn.setAttribute("src", "media/black-heart.svg");
+    likeContainer.appendChild(likeBtn);
+
     //Create an image
     let imgElement = document.createElement("IMG");
     imgElement.setAttribute("src", imgAtt);
 
     //Create an image container and append image
     let imgContainer = document.createElement("DIV");
+    imgContainer.classList.add("img-container");
     imgContainer.appendChild(imgElement);
+    imgContainer.appendChild(likeContainer);
+    imgContainer.appendChild(logoContainer);
 
-    //Create a label container
-    let labelContainer = document.createElement("DIV");
-    labelContainer.classList.add("label-container");
+    // //Create a label container
+    // let labelContainer = document.createElement("DIV");
+    // labelContainer.classList.add("label-container");
 
-    //create labels for meal type
-    for (let j = 0; j < mealType.length; j++) {
-      let label = document.createElement("P");
-      label.classList.add("label");
-      label.innerHTML = mealType[j];
-      labelContainer.appendChild(label);
-    }
+    // //create labels for meal type
+    // for (let j = 0; j < mealType.length; j++) {
+    //   let label = document.createElement("P");
+    //   label.classList.add("label");
+    //   label.innerHTML = mealType[j];
+    //   labelContainer.appendChild(label);
+    // }
 
     //Create a title
     let titleElement = document.createElement("H3");
@@ -138,12 +150,11 @@ const createRecipeCard = (data) => {
     let recipeContentContainer = document.createElement("DIV");
     recipeContentContainer.classList.add("padding", "recipe-content");
     recipeContentContainer.appendChild(titleElement);
-    recipeContentContainer.appendChild(labelContainer);
+    // recipeContentContainer.appendChild(labelContainer);
 
     //Create a card element and append ALL the previous elements
     let cardElement = document.createElement("DIV");
     cardElement.classList.add("card");
-    cardElement.appendChild(logoContainer);
     cardElement.appendChild(imgContainer);
     cardElement.appendChild(recipeContentContainer);
 
@@ -226,13 +237,13 @@ const openOverlay = (data) => {
 //
 
 // - - - CREATE ARRAY OF FAVORITES - - - //
-const favBtn = document.getElementById("fav-btn");
-favBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  console.log("clickingggggg");
-});
 
 // - - - SHOW THAT ARRAY IN myrecipes.html - - - //
+const favoriteContainer = document.getElementById("favorite-container");
+
+const createFavCard = () => {
+  console.log("Creating card...!");
+};
 
 // - - - HIDE THE LANDING OVERLAY - - - //
 const hideLanding = () => {

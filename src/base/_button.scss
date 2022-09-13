@@ -1,9 +1,21 @@
 .button {
-  @include button($accentColor, inline-block);
+  @include button($accentColor, inline-block, $black);
   padding: 0.8rem 2rem;
+  font-weight: $bold;
 
   &:hover {
-    @include button($accentColor, inline-block);
-    color: white;
+    @include button($accentColor, inline-block, $white);
   }
+}
+
+.small-button {
+  @include button($accentColor, inline-block, $black);
+  padding: 0.8rem 1.4rem;
+  font-size: 1.4rem;
+}
+
+.remove-button {
+  @include button(none, inline-block, $red);
+  padding: 0.8rem 1.4rem;
+  font-size: 1.4rem;
 }
