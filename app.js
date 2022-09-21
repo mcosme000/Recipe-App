@@ -8,8 +8,10 @@ const apiKey = "cd04877bbc5e2a254448c3464867d456";
 
 // ** search recipes on ingredients!! ** //
 const startApi = (input) => {
+  displayLoading();
   let searchRecipes = `https://api.edamam.com/api/recipes/v2?type=public&q=${input}&app_id=${appId}&app_key=${apiKey}`;
   axios.get(searchRecipes).then(getRecipes);
+  // hideLoading();
 };
 
 //
@@ -24,6 +26,7 @@ const container = document.getElementById("container");
 const cardContainer = document.getElementById("card-container");
 let card = document.getElementsByClassName("card");
 const greenContainer = document.getElementById("green");
+const loaderContainer = document.getElementById("loader");
 
 // overlay elements:
 let overlay = document.getElementById("overlay");
@@ -109,15 +112,6 @@ const createRecipeCard = (data) => {
       }
     }
 
-    //Create a like button container
-    let likeContainer = document.createElement("DIV");
-    likeContainer.classList.add("like-container");
-
-    //Create a like button
-    let likeBtn = document.createElement("IMG");
-    likeBtn.setAttribute("src", "media/black-heart.svg");
-    likeContainer.appendChild(likeBtn);
-
     //Create an image
     let imgElement = document.createElement("IMG");
     imgElement.setAttribute("src", imgAtt);
@@ -126,7 +120,6 @@ const createRecipeCard = (data) => {
     let imgContainer = document.createElement("DIV");
     imgContainer.classList.add("img-container");
     imgContainer.appendChild(imgElement);
-    imgContainer.appendChild(likeContainer);
     imgContainer.appendChild(logoContainer);
 
     // //Create a label container
@@ -166,6 +159,8 @@ const createRecipeCard = (data) => {
   //After all the cards are created, I store them in a variable and send it
   //with the API DATA to the function to get data of each one of them.
   let cards = document.getElementsByClassName("card");
+  let favbuttons = document.getElementsByClassName("fav-btn");
+  console.log(favbuttons);
   getSelectedCard(cards, data);
 };
 
@@ -176,6 +171,7 @@ sends that information to the function above to create cards */
 const getRecipes = (data) => {
   let recipeData = data.data.hits;
   createRecipeCard(recipeData);
+  hideLoading();
 };
 
 //
@@ -187,8 +183,8 @@ I still need the whole API data array to get extra information
 Since both arrays have the same lenght, when I click on X card, I can get the data[X] */
 const getSelectedCard = (arr, data) => {
   for (let i = 0; i < arr.length; i++) {
-    arr[i].addEventListener("click", () => {
-      // console.log(data[i]);
+    arr[i].addEventListener("click", (e) => {
+      e.preventDefault();
       openOverlay(data[i]);
     });
   }
@@ -234,15 +230,14 @@ const openOverlay = (data) => {
   });
 };
 
-//
+// SHOW AND HIDE THE LOADER
 
-// - - - CREATE ARRAY OF FAVORITES - - - //
+const displayLoading = () => {
+  loaderContainer.style.display = "block";
+};
 
-// - - - SHOW THAT ARRAY IN myrecipes.html - - - //
-const favoriteContainer = document.getElementById("favorite-container");
-
-const createFavCard = () => {
-  console.log("Creating card...!");
+const hideLoading = () => {
+  loaderContainer.style.display = "none";
 };
 
 // - - - HIDE THE LANDING OVERLAY - - - //
