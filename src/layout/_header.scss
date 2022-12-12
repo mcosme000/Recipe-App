@@ -1,5 +1,5 @@
 header {
-  padding: $space;
+  padding: $space 0;
   background: $primaryColor;
   // @include tablet {
   //   align-items: center;
@@ -9,9 +9,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include tablet {
-      width: 50%;
-    }
+    // @include  {
+    //   width: 50%;
+    // }
   }
 }
 

@@ -1,60 +1,32 @@
 .landing {
   background: $primaryColor;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  z-index: 7;
-  .overlay-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .landing-content {
-    width: 100%;
-    text-align: center;
-    color: white;
-    padding: 0 1rem;
+  flex-grow: 1;
 
-    h1 {
-      font-family: $primaryFont;
-      font-style: italic;
-      font-size: 5rem;
-    }
+  // .green-content {
+  //   margin: 0 auto;
+  //   width: 80%;
+  //   display: grid;
+  //   place-content: center;
 
-    .landing-icon {
-      margin: 2rem 0;
-      width: 10rem;
-      height: auto;
-    }
-
-    form {
-      margin: 2rem auto;
-      width: 100%;
-      input {
-        width: 90%;
-        max-width: 60rem;
-        border-radius: 2rem;
-        padding: 1.2rem 2rem;
-        background: $primaryColor;
-        border: 0.1rem solid white;
-        &:hover {
-          cursor: text;
-          border: 0.1rem solid $darkColor;
-          background: $darkColor;
-        }
-      }
-
-      input[type="submit"] {
-        display: none;
-      }
-    }
-  }
+  //   p {
+  //     color: white;
+  //     font-weight: $bold;
+  //     font-size: 2rem;
+  //   }
+  // }
 }
 
-.hidden {
-  display: none;
+.ideas li {
+  background: $secondaryColor;
+  padding: 0.6rem 2rem;
+  margin: 0.5rem;
+  border-radius: 3rem;
+  font-size: 1.4rem;
+  @include tablet {
+    font-size: 1.8rem;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $primaryColor;
+  }
 }

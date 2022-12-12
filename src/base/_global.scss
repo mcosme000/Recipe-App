@@ -12,7 +12,9 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   font-family: $secondaryFont;
-  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 // - - - - - - - - - //
