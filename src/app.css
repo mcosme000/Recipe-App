@@ -20,7 +20,7 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 300;
 }
 
@@ -98,7 +98,7 @@ li {
 .container {
   margin: 0rem auto;
   padding: 4rem;
-  max-width: 100rem;
+  max-width: 90rem;
   width: 100%;
 }
 
@@ -162,37 +162,34 @@ li {
 }
 
 header {
-  padding: 2rem 5rem;
+  padding: 4rem;
   background: #3f7a6d;
+}
+
+header .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media (min-width: 768px) {
-  header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+  header .container {
+    width: 50%;
   }
 }
 
-header .logo {
+.logo {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-style: italic;
-  padding: 2rem;
+  color: #fff;
+  margin-right: 1rem;
 }
 
 header ul li {

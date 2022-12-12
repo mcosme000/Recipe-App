@@ -1,20 +1,26 @@
 header {
-  padding: 2rem 5rem;
+  padding: $space;
   background: $primaryColor;
-  display: flex;
-  flex-direction: column;
-  @include tablet {
-    flex-direction: row;
+  // @include tablet {
+  //   align-items: center;
+  //   justify-content: space-between;
+  // }
+  .container {
+    display: flex;
     align-items: center;
     justify-content: space-between;
+    @include tablet {
+      width: 50%;
+    }
   }
+}
 
-  .logo {
-    font-family: $logo;
-    font-weight: $bold;
-    font-style: italic;
-    padding: $space / 2;
-  }
+.logo {
+  font-family: $logo;
+  font-weight: $bold;
+  font-style: italic;
+  color: #fff;
+  margin-right: 1rem;
 }
 
 header ul li {
