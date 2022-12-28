@@ -1,45 +1,39 @@
 // overlay elements:
-let overlay = document.getElementById("overlay");
-let overlayImg = document.getElementById("overlay-img");
-let overlayTitle = document.getElementById("overlay-title");
-const landing = document.getElementById("landing");
+const overlay = document.querySelector("#overlay");
 
 export const openOverlay = (data) => {
-  console.log(data);
+  const ingredientLines = data.recipe.ingredientLines;
 
-  //Get elements from overlay HTML
-  const overlay = document.getElementById("overlay");
-  let overlayImg = document.getElementById("overlay-img");
-  let overlayTitle = document.getElementById("overlay-title");
-  const recipeLink = document.getElementById("recipe-link");
-  const ingredientsList = document.getElementById("ingredients-list");
-  const closeBtn = document.getElementById("close-btn");
+  let overlayCard = `<div class="overlay-card">
+    <div class="close-btn" id="close-btn">
+      <img src="media/close.svg" alt="" class="icon" />
+    </div>
+    <div class="overlay-img" style="background-image: url(${data.recipe.image});">
+    </div>
+    <div class="overlay-text padding">
+      <h3 class="overlay-title" id="overlay-title">${data.recipe.label}</h3>
+      <p>Ingredients:</p>
+      <ul id="ingredients-list"></ul>
+      <a href="${data.recipe.url}" target="_blank" class="button" id="recipe-link">Go to recipe</a>
+    </div>
+  </div>`
 
-  //Change content of elements
-  overlayTitle.innerHTML = data.recipe.label;
-  overlayImg.src = data.recipe.image;
-  recipeLink.href = data.recipe.url;
-
-  //Create ingredients list
-  for (let i = 0; i < data.recipe.ingredientLines.length; i++) {
-    let ingredient = document.createElement("LI");
-    ingredient.innerHTML = data.recipe.ingredientLines[i];
-    ingredientsList.appendChild(ingredient);
-    // I need to format this list everytime I open the overlay!!
-  }
-
-  //Add link to button
-  recipeLink.href = data.recipe.url;
+  document.querySelector(".overlay-content").insertAdjacentHTML("beforeend", overlayCard);
 
   //Make overlay visible
   overlay.classList.remove("hidden");
 
+  //Create ingredients list
+  ingredientLines.forEach((item) => {
+    let ingredient = `<li>${item}</li>`
+    document.querySelector("#ingredients-list").insertAdjacentHTML("beforeend", ingredient);
+  })
+
   //Hide overlay
-  closeBtn.addEventListener("click", () => {
+  document.querySelector("#close-btn").addEventListener("click", () => {
     overlay.classList.add("hidden");
-    // Format the ingredient list:
-    while (ingredientsList.firstChild) {
-      ingredientsList.removeChild(ingredientsList.firstChild);
-    }
+    // Format the overlay card and ingredients list:
+    document.querySelector(".overlay-content").innerHTML = "";
+    document.querySelector("#ingredients-list").innerHTML = "";
   });
 };
