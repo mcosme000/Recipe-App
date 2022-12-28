@@ -1,19 +1,10 @@
 .landing {
   background: $primaryColor;
   flex-grow: 1;
-
-  // .green-content {
-  //   margin: 0 auto;
-  //   width: 80%;
-  //   display: grid;
-  //   place-content: center;
-
-  //   p {
-  //     color: white;
-  //     font-weight: $bold;
-  //     font-size: 2rem;
-  //   }
-  // }
+  color: #fff;
+  p {
+    font-weight: $bold;
+  }
 }
 
 .ideas li {
@@ -21,12 +12,12 @@
   padding: 0.6rem 2rem;
   margin: 0.5rem;
   border-radius: 3rem;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   @include tablet {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   &:hover {
     cursor: pointer;
-    color: $primaryColor;
+    color: $accentColor;
   }
 }

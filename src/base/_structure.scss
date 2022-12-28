@@ -1,19 +1,24 @@
 .container {
-  margin: 0rem auto;
+  margin: 0 auto;
   padding: $space;
   max-width: 90rem;
-  width: 100%;
+  @include tablet {
+    padding: $space 0;
+    width: 85%;
+  }
 }
 
 .small-container {
-  margin: 0rem auto;
-  padding: $space;
-  max-width: 80rem;
-  width: 100%;
+  margin: 0 auto;
+  padding: $space 0;
+  max-width: 70rem;
+  @include tablet {
+    width: 85%;
+  }
 }
 
 .section {
   width: 100%;
-  margin: 2rem 0;
+  margin: $space / 2 0;
   background: $secondaryColor;
 }

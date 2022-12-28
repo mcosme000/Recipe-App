@@ -8,9 +8,6 @@
   <title>Recipe app</title>
   <link rel="stylesheet" href="src/app.css" />
 
-  <!-- AXIOS -->
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
   <!-- FONT AWESOME -->
   <script src="https://kit.fontawesome.com/8013b0f68f.js" crossorigin="anonymous"></script>
 </head>
@@ -20,30 +17,7 @@
 
   <!-- OVERLAY FOR RECIPES -->
   <div class="overlay hidden" id="overlay">
-    <div class="overlay-content">
-      <!-- CARD STARTS HERE -->
-      <div class="overlay-card">
-        <div class="close-btn" id="close-btn">
-          <img src="media/close.svg" alt="" class="icon" />
-        </div>
-        <div class="overlay-img">
-          <img
-            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-            alt="" id="overlay-img" />
-        </div>
-        <div class="overlay-text padding">
-          <h3 class="overlay-title" id="overlay-title">Recipe title</h3>
-          <p>Ingredients list:</p>
-          <ul id="ingredients-list"></ul>
-          <div class="details">
-            <p>PREP TIME <span id="prepTime">20 mins</span></p>
-            <p>COOK TIME <span class="cookTime">40mins</span></p>
-            <p>SERVES <span class="serves">4</span></p>
-          </div>
-          <a href="#" target="_blank" class="button" id="recipe-link">Go to recipe</a>
-        </div>
-      </div>
-    </div>
+    <div class="overlay-content"></div>
   </div>
 
   <!-- HEADER  -->
@@ -66,8 +40,8 @@
     </div>
   </header>
 
-  <!-- green layout -->
-  <div class="landing" id="green">
+  <!-- LANDING LAYOUT -->
+  <div class="landing" id="landing">
     <div class="container">
       <h1>Welcome to <span class="logo">FOODS</span></h1>
       <p>
@@ -78,8 +52,8 @@
       <ul class="ideas" id="ideas">
         <li>Chocolate Cake</li>
         <li>Low-carb Dinner</li>
-        <li>Chili con Carne</li>
-        <li>Spanish Omelete</li>
+        <li>Vegan pasta</li>
+        <li>Matcha latte</li>
         <li>Rare Beef</li>
         <li>One-pot</li>
       </ul>
@@ -88,28 +62,10 @@
 
   <div class="container hidden" id="container">
     <h1 id="title"></h1>
-    <div class="card-container" id="card-container">
-      <!-- <div class="card">
-        <div class="logo-container">
-          <img src="media/vegan.svg" alt="" class="logo" />
-          <img src="media/gluten-free.svg" alt="" class="logo" />
-        </div>
-        <div class="img-container"></div>
-        <div class="recipe-content padding">
-          <div class="like-container">
-            <img src="media/black-heart.svg">
-          </div>
-          <h3 class="title">Title of the recipe</h3>
-          <div class="label-container">
-            <p class="label">Asian</p>
-            <p class="label">Meat</p>
-          </div>
-        </div>
-      </div> -->
-    </div>
+    <div class="card-container" id="card-container"></div>
   </div>
 
-  <script src="./src/index.js"></script>
+  <script type="module" src="./src/js/main.js"></script>
 </body>
 
 </html>

@@ -1,21 +1,24 @@
 header {
-  padding: $space 0;
+  padding: $space / 2 0;
   background: $primaryColor;
-  // @include tablet {
-  //   align-items: center;
-  //   justify-content: space-between;
-  // }
+  @include tablet {
+    padding: $space / 4 0;
+    align-items: center;
+    justify-content: space-between;
+  }
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // @include  {
-    //   width: 50%;
-    // }
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 }
 
 .logo {
+  font-size: 3.6rem;
   font-family: $logo;
   font-weight: $bold;
   font-style: italic;
@@ -28,7 +31,7 @@ header ul li {
 }
 
 header form {
-  width: 100%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,10 +39,10 @@ header form {
   border-radius: 3rem;
   padding: 0.8rem 2rem;
   @include tablet {
-    width: 50%;
+    width: 100%;
   }
   input[type="text"] {
-    width: 90%;
+    width: 100%;
     background: $primaryColor;
     border: none;
     font-size: 1.6rem;

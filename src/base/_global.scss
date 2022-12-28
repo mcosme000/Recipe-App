@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.5;
   font-family: $secondaryFont;
   height: 100vh;
@@ -20,36 +20,35 @@ body {
 // - - - - - - - - - //
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: $light;
   @include tablet {
-    font-size: 4rem;
+    font-size: 2.6rem;
   }
 }
 
 h3 {
   font-size: 2.5rem;
-  margin-bottom: 1.2rem;
 }
 
 h1,
 h3 {
   font-family: $primaryFont;
-  line-height: 1.3;
 }
 
 p,
 li {
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   @include tablet {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
   }
 }
 
 a {
   text-decoration: none;
   color: white;
+  
 }
 
 img {
@@ -60,6 +59,7 @@ img {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 li {

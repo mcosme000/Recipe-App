@@ -1,18 +1,18 @@
 //MEDIA QUERIES
 @mixin phone {
-  @media (min-width: $phone) {
+  @media (max-width: $phone) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media (min-width: $tablet) {
+  @media (max-width: $tablet) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: $desktop) {
+  @media (max-width: $desktop) {
     @content;
   }
 }
@@ -21,10 +21,14 @@
 @mixin button($background, $display, $color) {
   text-align: center;
   margin: 1rem 1rem 1rem 0;
-  text-align: center;
   border-radius: 2rem;
   background: $background;
   display: $display;
   color: $color;
+  font-size: 1.6rem;
+  letter-spacing: 1.1px;
   @content;
+  @include tablet {
+    font-size: 1.4rem;
+  }
 }

@@ -2,8 +2,7 @@
   background: rgba(5, 5, 5, 0.4);
   position: fixed;
   top: 0;
-  display: flex;
-  justify-content: center;
+  display: grid;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -20,19 +19,61 @@
 // CARD STYLES
 .overlay-card {
   position: relative;
-  width: 80%;
-  background: $secondaryColor;
+  width: 700px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
   @include tablet {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 90rem;
+    flex-direction: column;
+    width: 80%;
+    height: 80vh;
+  }
+
+  .overlay-img {
+    flex: 1 1 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px 0px 0px 5px;
+    @include tablet {
+      border-radius: 5px 5px 0px 0px;
+    }
+  }
+
+  .overlay-text {
+    flex: 1 1 100px;
+    height: 400px;
+    padding: 2rem;
+    overflow: scroll;
+    .overlay-title {
+      font-size: 3.6rem;
+      font-weight: $light;
+      font-style: italic;
+      border-bottom: 0.1rem solid black;
+      @include tablet {
+        font-size: 2.5rem;
+      }
+    }
+
+    .details {
+      display: flex;
+      justify-content: space-between;
+      margin: 2rem 0;
+      p {
+        color: $primaryColor;
+        span {
+          display: block;
+          color: black;
+        }
+      }
+    }
   }
 
   .close-btn {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    padding: 1rem 1rem;
+    top: 2rem;
+    left: 2rem;
+    padding: 1rem;
     border-radius: 50px;
     background: white;
     z-index: 1;
@@ -40,46 +81,6 @@
     place-content: center;
     &:hover {
       cursor: pointer;
-    }
-  }
-  .overlay-img {
-    height: 30rem;
-    width: 100%;
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    @include tablet {
-      width: 40rem;
-      height: 100%;
-    }
-  }
-}
-
-.overlay-text {
-  max-height: 40rem;
-  overflow: scroll;
-  .overlay-title {
-    font-size: 2.5rem;
-    font-weight: $light;
-    font-style: italic;
-    border-bottom: 0.1rem solid black;
-    @include tablet {
-      font-size: 4rem;
-    }
-  }
-
-  .details {
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem 0;
-    p {
-      color: $primaryColor;
-      span {
-        display: block;
-        color: black;
-      }
     }
   }
 }
