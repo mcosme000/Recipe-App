@@ -14,7 +14,7 @@ export const openOverlay = (data) => {
       <h3 class="overlay-title" id="overlay-title">${data.recipe.label}</h3>
       <p>Ingredients:</p>
       <ul id="ingredients-list"></ul>
-      <a href="${data.recipe.url}" target="_blank" class="button" id="recipe-link">Go to recipe</a>
+      <a href="${data.recipe.url}" target="_blank" class="button" id="recipe-link">Recipe</a>
     </div>
   </div>`
 
