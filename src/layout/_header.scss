@@ -20,9 +20,8 @@ header {
 .logo {
   font-size: 3.6rem;
   font-family: $logo;
-  font-weight: $bold;
   font-style: italic;
-  color: #fff;
+  color: $secondaryColor;
   margin-right: 1rem;
 }
 
@@ -31,25 +30,24 @@ header ul li {
 }
 
 header form {
-  width: 70%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 0.1rem solid white;
+  border: 0.1rem solid $secondaryColor;
   border-radius: 3rem;
-  padding: 0.8rem 2rem;
+  padding: 0.6rem 2rem;
   @include tablet {
     width: 100%;
   }
   input[type="text"] {
-    width: 100%;
     background: $primaryColor;
     border: none;
     font-size: 1.6rem;
-    padding: 0.5rem 2rem;
-    color: white;
+    padding: 0.5rem 1rem;
+    color: $secondaryColor;
     &::placeholder {
-      color: white;
+      color: $secondaryColor;
     }
   }
 

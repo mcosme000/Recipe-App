@@ -32,3 +32,18 @@
     font-size: 1.4rem;
   }
 }
+
+// LABEL MIXING
+@mixin label($background, $display, $color) {
+  color: $color;
+  background: $background;
+  margin-right: 0.5rem;
+  border-radius: 3rem;
+  @content;
+  @include tablet {
+    font-size: 1.4rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

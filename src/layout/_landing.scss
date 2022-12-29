@@ -1,23 +1,8 @@
 .landing {
   background: $primaryColor;
   flex-grow: 1;
-  color: #fff;
+  color: $secondaryColor;
   p {
     font-weight: $bold;
-  }
-}
-
-.ideas li {
-  background: $secondaryColor;
-  padding: 0.6rem 2rem;
-  margin: 0.5rem;
-  border-radius: 3rem;
-  font-size: 1.8rem;
-  @include tablet {
-    font-size: 1.4rem;
-  }
-  &:hover {
-    cursor: pointer;
-    color: $accentColor;
   }
 }
