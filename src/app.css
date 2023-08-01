@@ -4,8 +4,7 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -17,20 +16,14 @@ body {
   line-height: 1.5;
   font-family: "PT Serif", serif;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: 300;
 }
-
 @media (max-width: 768px) {
   h1 {
     font-size: 2.6rem;
@@ -50,7 +43,6 @@ p,
 li {
   margin-bottom: 2rem;
 }
-
 @media (max-width: 768px) {
   p,
   li {
@@ -78,6 +70,7 @@ ul {
 
 li {
   display: inline-block;
+  color: #065799;
 }
 
 .padding {
@@ -86,11 +79,6 @@ li {
 
 .hidden {
   display: none;
-}
-
-.active {
-  color: #e17e4a;
-  font-weight: 700;
 }
 
 .bold {
@@ -106,7 +94,6 @@ li {
   padding: 4rem;
   max-width: 90rem;
 }
-
 @media (max-width: 768px) {
   .container {
     padding: 4rem 0;
@@ -119,7 +106,6 @@ li {
   padding: 4rem 0;
   max-width: 70rem;
 }
-
 @media (max-width: 768px) {
   .small-container {
     width: 85%;
@@ -128,7 +114,6 @@ li {
 
 .section {
   width: 100%;
-  margin: 2rem 0;
   background: #065799;
 }
 
@@ -144,13 +129,11 @@ li {
   padding: 0.5rem 2.5rem;
   font-weight: 700;
 }
-
 @media (max-width: 768px) {
   .button {
     font-size: 1.4rem;
   }
 }
-
 .button:hover {
   text-align: center;
   margin: 1rem 1rem 1rem 0;
@@ -161,7 +144,6 @@ li {
   font-size: 1.6rem;
   letter-spacing: 1.1px;
 }
-
 @media (max-width: 768px) {
   .button:hover {
     font-size: 1.4rem;
@@ -180,7 +162,6 @@ li {
   padding: 0.8rem 1.4rem;
   font-size: 1.4rem;
 }
-
 @media (max-width: 768px) {
   .small-button {
     font-size: 1.4rem;
@@ -197,55 +178,35 @@ li {
   font-size: 1.8rem;
   padding: 0.6rem 2rem;
 }
-
 @media (max-width: 768px) {
   .label-big {
     font-size: 1.4rem;
   }
 }
-
 .label-big:hover {
   cursor: pointer;
 }
 
 header {
-  padding: 2rem 0;
+  padding: 2rem;
   background: #f4e7cf;
 }
-
 @media (max-width: 768px) {
   header {
-    padding: 1rem 0;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
   }
 }
-
 header .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
-
 @media (max-width: 768px) {
   header .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -263,83 +224,57 @@ header ul li {
 
 header form {
   width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   border: 0.1rem solid #065799;
   border-radius: 3rem;
   padding: 0.6rem 2rem;
 }
-
 @media (max-width: 768px) {
   header form {
     width: 100%;
   }
 }
-
-header form input[type="text"] {
+header form input[type=text] {
   background: #f4e7cf;
   border: none;
   font-size: 1.6rem;
   padding: 0.5rem 1rem;
   color: #065799;
 }
-
-header form input[type="text"]::-webkit-input-placeholder {
+header form input[type=text]::-moz-placeholder {
   color: #065799;
 }
-
-header form input[type="text"]:-ms-input-placeholder {
+header form input[type=text]::placeholder {
   color: #065799;
 }
-
-header form input[type="text"]::-ms-input-placeholder {
-  color: #065799;
-}
-
-header form input[type="text"]::placeholder {
-  color: #065799;
-}
-
-header form button[type="submit"] {
+header form button[type=submit] {
   background: none;
   border: none;
   padding: 0 1rem;
 }
-
-header form button[type="submit"] img {
+header form button[type=submit] img {
   width: 2rem;
 }
 
 .card-container {
   margin: 4rem 0;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
 }
-
 @media (max-width: 768px) {
   .card-container {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
 .card {
   position: relative;
   border-radius: 3px;
-  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
-
 .card .img-container {
   border-radius: 3px 3px 0 0;
   position: relative;
@@ -347,11 +282,9 @@ header form button[type="submit"] img {
   background-size: cover;
   background-position: center;
 }
-
 .card .recipe-content {
   padding: 2rem;
 }
-
 .card .logo-container {
   position: absolute;
   bottom: -2rem;
@@ -359,15 +292,10 @@ header form button[type="submit"] img {
   margin-right: auto;
   width: 100%;
   height: 4rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   padding: 0 30%;
 }
-
 .card .logo-container img {
   height: 100%;
   width: 100%;
@@ -375,15 +303,10 @@ header form button[type="submit"] img {
      object-fit: contain;
   margin: 0 1rem;
 }
-
 .card .label-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 .card .label-container .label {
   font-size: 1.2rem;
   font-weight: bold;
@@ -392,7 +315,6 @@ header form button[type="submit"] img {
   background: #065799;
   border-radius: 50px;
 }
-
 .card .like-btn {
   position: absolute;
   top: 2rem;
@@ -401,7 +323,6 @@ header form button[type="submit"] img {
   height: auto;
   z-index: 3;
 }
-
 .card .like-btn:hover {
   cursor: pointer;
 }
@@ -414,28 +335,18 @@ header form button[type="submit"] img {
   background: rgba(5, 5, 5, 0.4);
   position: fixed;
   top: 0;
-  display: -ms-grid;
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   z-index: 7;
 }
-
 .overlay .overlay-content {
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay-card {
@@ -443,80 +354,56 @@ header form button[type="submit"] img {
   width: 700px;
   background: #fff;
   border-radius: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 @media (max-width: 768px) {
   .overlay-card {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     width: 80%;
     height: 80vh;
   }
 }
-
 .overlay-card .overlay-img {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100px;
-          flex: 1 1 100px;
+  flex: 1 1 100px;
   background-size: cover;
   background-position: center;
   border-radius: 5px 0px 0px 5px;
 }
-
 @media (max-width: 768px) {
   .overlay-card .overlay-img {
     border-radius: 5px 5px 0px 0px;
   }
 }
-
 .overlay-card .overlay-text {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100px;
-          flex: 1 1 100px;
+  flex: 1 1 100px;
   height: 400px;
   padding: 2rem;
   overflow: scroll;
 }
-
 .overlay-card .overlay-text .overlay-title {
   font-size: 3.6rem;
   font-weight: 300;
   font-style: italic;
   border-bottom: 0.1rem solid black;
 }
-
 @media (max-width: 768px) {
   .overlay-card .overlay-text .overlay-title {
     font-size: 2.5rem;
   }
 }
-
 .overlay-card .overlay-text .details {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin: 2rem 0;
 }
-
 .overlay-card .overlay-text .details p {
   color: #f4e7cf;
 }
-
 .overlay-card .overlay-text .details p span {
   display: block;
   color: black;
 }
-
 .overlay-card .close-btn {
   position: absolute;
   top: 2rem;
@@ -525,11 +412,9 @@ header form button[type="submit"] img {
   border-radius: 50px;
   background: white;
   z-index: 1;
-  display: -ms-grid;
   display: grid;
   place-content: center;
 }
-
 .overlay-card .close-btn:hover {
   cursor: pointer;
 }
@@ -540,33 +425,27 @@ header form button[type="submit"] img {
 
 footer {
   width: 100%;
-  padding: 1.33333rem;
-  background: #3b3b3b;
+  padding: 1.3333333333rem;
+  background: rgb(59, 59, 59);
   color: white;
   text-align: center;
 }
-
 footer p {
   font-size: 1.2rem;
 }
-
 footer ul li {
   font-size: 2rem;
   margin: 0 2rem;
 }
-
 footer ul li:hover {
   color: #e17e4a;
 }
 
 .landing {
   background: #f4e7cf;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   color: #065799;
 }
-
 .landing p {
   font-weight: 700;
 }
@@ -574,39 +453,27 @@ footer ul li:hover {
 .iconography {
   margin-top: 3rem;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 @media (max-width: 768px) {
   .iconography {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
-
 .iconography div {
   margin-bottom: 4rem;
 }
-
 @media (max-width: 768px) {
   .iconography div {
     margin: 0;
   }
 }
-
 .iconography img {
   width: 70%;
   max-width: 30rem;
   height: auto;
 }
-
 @media (max-width: 768px) {
   .iconography img {
     width: 12rem;
@@ -623,5 +490,4 @@ footer ul li:hover {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
-}
-/*# sourceMappingURL=app.css.map */
+}/*# sourceMappingURL=app.css.map */

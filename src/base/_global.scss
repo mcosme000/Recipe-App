@@ -48,7 +48,7 @@ li {
 a {
   text-decoration: none;
   color: white;
-  
+
 }
 
 img {
@@ -64,19 +64,15 @@ ul {
 
 li {
   display: inline-block;
+  color: $secondaryColor;
 }
 
 .padding {
-  padding: $space / 2;
+  padding: calc($space / 2)
 }
 
 .hidden {
   display: none;
-}
-
-.active {
-  color: $accentColor;
-  font-weight: $bold;
 }
 
 .bold {
