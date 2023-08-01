@@ -7,13 +7,10 @@ const cardContainer = document.querySelector("#card-container");
 
 export const createRecipeCard = (recipes) => {
   recipes.forEach((recipe) => {
-
     let icons = dietary_icons(recipe.recipe.healthLabels)
-    console.log(icons);
-
     let recipeTag = `<div class="card">
       <div class="img-container" style="background-image: url(${recipe.recipe.image});">
-        <div class="logo-container">${icons.innerHTML}</div>
+        ${icons.children.length > 0 ? `<div class="logo-container">${icons.innerHTML}</div>` : ''}
       </div>
       <div class="recipe-content padding">
         <h3 class="recipe-title">${recipe.recipe.label}</h3>
@@ -45,7 +42,6 @@ export const createRecipeCard = (recipes) => {
   //with the API DATA to the function to get data of each one of them.
   let cards = document.getElementsByClassName("card");
   let favbuttons = document.getElementsByClassName("fav-btn");
-  console.log(favbuttons);
   getSelectedCard(cards, recipes);
 };
 

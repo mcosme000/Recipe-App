@@ -4,10 +4,8 @@ export const dietary_icons = (data) => {
   data.forEach((n) => {
     iconHealth.forEach((icon) => {
       if (icon == n.toLowerCase()) {
-        console.log(n.toLowerCase());
         let logo = document.createElement("img");
-        logo.setAttribute("src", `media/${n.toLowerCase()}.png`);
-        console.log(logo);
+        logo.setAttribute("src", `media/${n.toLowerCase()}-white.png`);
         logo.classList.add("icon")
         logoContainer.appendChild(logo);
       }
