@@ -252,10 +252,15 @@ header form button[type=submit] img {
 .card-container {
   margin: 4rem 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
 }
 @media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
   .card-container {
     grid-template-columns: 1fr;
   }
@@ -319,7 +324,7 @@ header form button[type=submit] img {
 }
 
 .recipe-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .overlay {

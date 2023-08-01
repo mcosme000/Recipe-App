@@ -1,9 +1,12 @@
 .card-container {
   margin: $space 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include phone {
     grid-template-columns: 1fr;
   }
 }
@@ -71,5 +74,5 @@
 }
 
 .recipe-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
