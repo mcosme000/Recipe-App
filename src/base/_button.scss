@@ -1,15 +1,9 @@
 .button {
-  @include button($primaryColor, inline-block, $black);
+  @include button($secondaryColor, inline-block, $white);
   padding: 0.5rem 2.5rem;
   font-weight: $bold;
 
   &:hover {
-    @include button($primaryColor, inline-block, $white);
+    @include button($secondaryDarkColor, inline-block, $white);
   }
-}
-
-.small-button {
-  @include button($accentColor, inline-block, $black);
-  padding: 0.8rem 1.4rem;
-  font-size: 1.4rem;
 }

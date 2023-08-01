@@ -1,8 +1,6 @@
 header {
-  padding: calc($space / 2);
   background: $primaryColor;
   @include tablet {
-    padding: calc($space / 4);
     align-items: center;
     justify-content: space-between;
   }
@@ -27,6 +25,9 @@ header {
 
 header ul li {
   margin: 0 2rem;
+  @include tablet {
+    margin: 0;
+  }
 }
 
 header form {
@@ -34,9 +35,9 @@ header form {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 0.1rem solid $secondaryColor;
+  border: 0.2rem solid $secondaryColor;
   border-radius: 3rem;
-  padding: 0.6rem 2rem;
+  padding: 0.5rem 2rem;
   @include tablet {
     width: 100%;
   }
@@ -56,7 +57,7 @@ header form {
     border: none;
     padding: 0 1rem;
     img {
-      width: 2rem;
+      width: 1.5rem;
     }
   }
 }

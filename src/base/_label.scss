@@ -1,7 +1,9 @@
 .label-big {
   @include label($secondaryColor, inline-block, $white);
-  padding: 0.5rem 2.5rem;
-  font-weight: $bold;
-  font-size: 1.8rem;
-  padding: 0.6rem 2rem;
+  padding: 0.5rem 3rem;
+  font-size: 1.5rem;
+  @include tablet {
+    padding: 0.5rem 2.5rem;
+    font-size: 1.3rem;
+  }
 }

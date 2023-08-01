@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  z-index: 7;
+  z-index: 2;
   .overlay-content {
     width: 100%;
     height: 100%;
@@ -21,7 +21,7 @@
   position: relative;
   width: 700px;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 3px;
   display: flex;
   flex-wrap: wrap;
   @include tablet {
@@ -46,12 +46,13 @@
     padding: 2rem;
     overflow: scroll;
     .overlay-title {
-      font-size: 3.6rem;
-      font-weight: $light;
+      font-size: 2.2rem;
+      color: $secondaryColor;
+      font-weight: $bold;
       font-style: italic;
       border-bottom: 0.1rem solid black;
       @include tablet {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
       }
     }
 
