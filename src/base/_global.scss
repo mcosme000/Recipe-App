@@ -50,8 +50,7 @@ li {
 
 a {
   text-decoration: none;
-  color: white;
-
+  color: $secondaryColor;
 }
 
 img {
@@ -61,7 +60,6 @@ img {
 }
 
 ul {
-  list-style: circle;
   padding: 0;
 }
 
@@ -69,6 +67,8 @@ li {
   display: inline-block;
   color: $secondaryColor;
 }
+
+
 
 .padding {
   padding: calc($space / 2)

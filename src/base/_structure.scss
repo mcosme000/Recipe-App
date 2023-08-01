@@ -1,7 +1,7 @@
 .container {
   margin: 0 auto;
   padding: $space;
-  max-width: 90rem;
+  max-width: 120rem;
   @include tablet {
     padding: $space 0;
     width: 85%;

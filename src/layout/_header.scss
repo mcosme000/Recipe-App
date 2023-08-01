@@ -13,24 +13,40 @@ header {
       align-items: flex-start;
     }
   }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .phone_view_about {
+    display: none;
+    @include tablet {
+      display: inline;
+    }
+  }
+
+  .desktop_view_about {
+    @include tablet {
+      display: none;
+    }
+  }
 }
 
 .logo {
+  margin-right: 2.5rem;
+  margin-bottom: 0;
   font-size: 3.6rem;
   font-family: $logo;
   font-style: italic;
   color: $secondaryColor;
-  margin-right: 1rem;
-}
-
-header ul li {
-  margin: 0 2rem;
-  @include tablet {
-    margin: 0;
+  @include phone {
+    font-size: 2.5rem;
   }
 }
 
 header form {
+  margin: 1.5rem 0;
   width: 50%;
   display: flex;
   align-items: center;
@@ -41,7 +57,9 @@ header form {
   @include tablet {
     width: 100%;
   }
+
   input[type="text"] {
+    width: 90%;
     background: $primaryColor;
     border: none;
     font-size: 1.6rem;

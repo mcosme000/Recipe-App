@@ -2,7 +2,7 @@
   margin: $space 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 3rem;
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -15,7 +15,11 @@
   position: relative;
   border-radius: 3px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-
+  transition: ease-out 0.4s;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
   .img-container {
     border-radius: 3px 3px 0 0;
     position: relative;
@@ -30,14 +34,14 @@
 
   .logo-container {
     position: absolute;
-    bottom: -2rem;
-    margin-left: auto;
-    margin-right: auto;
+    bottom: 0rem;
+    background: $primaryColor;
+    // margin-left: auto;
+    // margin-right: auto;
     width: 100%;
     height: 4rem;
     display: flex;
-    justify-content: center;
-    padding: 0 30%;
+    justify-content: start;
     img {
       height: 100%;
       width: 100%;
@@ -75,4 +79,10 @@
 
 .recipe-title {
   font-size: 1.8rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 1.8rem;
+  @include tablet {
+    font-size: 1.5rem;
+  }
 }
